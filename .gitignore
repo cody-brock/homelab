@@ -1,0 +1,6 @@
+PLAN.md
+.DS_Store
+*.tfstate*
+.terraform/
+*.tfvars
+.envrc
