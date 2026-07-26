@@ -3,7 +3,7 @@
 DNS had been managed under Google Domains originally.  This was moved to Squarespace when Google Domains closed down.
 In order to bring the DNS records into IAC and manage them with terraform, moved management of DNS to Cloudflare.
 
-One learning was to disable DNSSEC before switching nameservers -- otherwise the the domain would have gone dark. The active DS record being pinned to the old keys would make validators reject the new nameservers, and the domain would have become unreachable.  After disabling it for the move, re-enabled it with Cloudflare.
+One learning was to disable DNSSEC before switching nameservers -- otherwise the domain would have gone dark. The active DS record being pinned to the old keys would make validators reject the new nameservers, and the domain would have become unreachable.  After disabling it for the move, re-enabled it with Cloudflare.
 
 Another thing was that a 8.8.8.8 node was briefly serving the old DNS record after re-enabling DNSSEC.  This made it look like a rollback.  But it was just TTL.  Better would be to verify against he TLD's authoritative servers, not the public resolver's cache.
 
