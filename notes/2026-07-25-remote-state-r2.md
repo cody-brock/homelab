@@ -14,4 +14,8 @@ Note that you must have env vars AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY (as
 
 The many `skip_*` flags are because we're aiming an AWS SDK at a non-AWS service, so we have to disable AWS-specific assumptions. Plus `use_lockfile = true` allows us to use locking here, which is why the terraform version jumped to >=1.10.  Locking works via S3 style conditional writes, which R2 supports, so no DynamoDB table is needed.
 
+### Separating DNS State from Cluster State
 
+Split the terraform config into two root modules, dns/ and cluster/, each with its own state in R2 (homelab/dns/..., homelab/cluster/...).
+
+This will let us keep it separate from the cluster terraform, which might have experimental changes that we don't want to accidentally impact DNS.  Mostly ceremonial at this size, but good practice.
