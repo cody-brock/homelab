@@ -3,7 +3,7 @@ terraform {
 
   backend "s3" {
     bucket                      = "codybrock-tf-state"
-    key                         = "homelab/terraform.tfstate"
+    key                         = "homelab/dns/terraform.tfstate"
     region                      = "auto"
     skip_credentials_validation = true
     skip_metadata_api_check     = true
