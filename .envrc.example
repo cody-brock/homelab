@@ -1,0 +1,10 @@
+# Cloudflare API token, scoped to codybrock.dev zone (DNS edit + zone read)
+export CLOUDFLARE_API_TOKEN="cf-token-here"
+
+# R2 S3-compatible credentials (R2 > Manage R2 API Tokens > Object Read & Write,
+# scoped to bucket codybrock-tf-state). NOT the same as the Cloudflare API token.
+export AWS_ACCESS_KEY_ID="r2-access-key-id"
+export AWS_SECRET_ACCESS_KEY="r2-secret-access-key"
+
+# Hetzner Cloud, project "homelab", Read & Write
+export HCLOUD_TOKEN="hcloud-token-here"
