@@ -1,0 +1,2 @@
+# Get values from: curl -s -4 ifconfig.me / curl -s -6 ifconfig.me
+ssh_allowed_cidrs = ["192.0.2.0/24", "2001:db8:1234:5678::/64"]
